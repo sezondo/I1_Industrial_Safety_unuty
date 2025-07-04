@@ -19,7 +19,6 @@ MemoryCaptures/
 
 # 유저 설정
 UserSettings/
-*.prefs
 
 # OS 관련
 .DS_Store
