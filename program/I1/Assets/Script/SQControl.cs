@@ -28,9 +28,9 @@ public class SQControl : MonoBehaviour
         }
 
         sequenceStep = 0;
-        sequence_1 = 3;
-        sequence_2 = 5;
-        sequence_3 = 9;
+        sequence_1 = 5;
+        sequence_2 = 7;
+        sequence_3 = 11;
     }
 
 
