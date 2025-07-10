@@ -1,0 +1,8 @@
+/Users/mro4/Desktop/project/program/I1/.utmp/RelWithDebInfo/5276d5s6/arm64-v8a/CMakeFiles/edit_cache.dir
+/Users/mro4/Desktop/project/program/I1/.utmp/RelWithDebInfo/5276d5s6/arm64-v8a/CMakeFiles/rebuild_cache.dir
+/Users/mro4/Desktop/project/program/I1/.utmp/RelWithDebInfo/5276d5s6/arm64-v8a/GameActivity/CMakeFiles/game.dir
+/Users/mro4/Desktop/project/program/I1/.utmp/RelWithDebInfo/5276d5s6/arm64-v8a/GameActivity/CMakeFiles/edit_cache.dir
+/Users/mro4/Desktop/project/program/I1/.utmp/RelWithDebInfo/5276d5s6/arm64-v8a/GameActivity/CMakeFiles/rebuild_cache.dir
+/Users/mro4/Desktop/project/program/I1/.utmp/RelWithDebInfo/5276d5s6/arm64-v8a/FramePacing/CMakeFiles/swappywrapper.dir
+/Users/mro4/Desktop/project/program/I1/.utmp/RelWithDebInfo/5276d5s6/arm64-v8a/FramePacing/CMakeFiles/edit_cache.dir
+/Users/mro4/Desktop/project/program/I1/.utmp/RelWithDebInfo/5276d5s6/arm64-v8a/FramePacing/CMakeFiles/rebuild_cache.dir
