@@ -3,26 +3,52 @@ using UnityEngine;
 
 public class FallingManControl : MonoBehaviour
 {
-    private bool isWalking;
     private Animator animator;
 
     private Vector3 startTransform;
+    private int SQsave;
     // SQ 제어로 만들꺼임
     void Awake()
     {
         animator = GetComponent<Animator>();
-        isWalking = true;
         startTransform = transform.position;
     }
 
     // Update is called once per frame
     void Update()
     {
-         switch (SQControl.instance.sequenceStep)
+        switch (SQControl.instance.sequenceStep)
+        {
+            case 0:
+                transform.Translate(-transform.right * 0.025f * Time.deltaTime);
+                break;
+
+            case 1:
+
+                break;
+
+            case 2:
+
+                break;
+
+        }
+
+        if (SQsave != SQControl.instance.sequenceStep)
+        {
+            SQsave = SQControl.instance.sequenceStep;
+            Switching();
+        }
+
+
+    }
+
+    void Switching()
+    {
+        switch (SQControl.instance.sequenceStep)
         {
             case 0:
                 transform.position = startTransform;
-                transform.position += transform.forward * 1f * Time.deltaTime;
+                animator.SetTrigger("Run");
                 break;
 
             case 1:
@@ -32,6 +58,7 @@ public class FallingManControl : MonoBehaviour
             case 2:
                 animator.SetTrigger("Die");
                 break;
+
         }
     }
 }

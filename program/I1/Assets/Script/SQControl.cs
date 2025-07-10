@@ -28,8 +28,8 @@ public class SQControl : MonoBehaviour
         }
 
         sequenceStep = 0;
-        sequence_1 = 2;
-        sequence_2 = 4;
+        sequence_1 = 3;
+        sequence_2 = 5;
         sequence_3 = 9;
     }
 
@@ -43,22 +43,21 @@ public class SQControl : MonoBehaviour
 
     void Timeflies()
     {
-        if (currentTime < 2)
+        if (currentTime <= sequence_1)
         {
             sequenceStep = 0; //남자 걸어감 / 돌 대기
         }
-        else if (currentTime > 2 && currentTime < 6)
+        else if (currentTime >= sequence_1 && currentTime <= sequence_2)
         {
             sequenceStep = 1; //남자 서있음 / 돌 남자에게 옴
         }
-        else if (currentTime > 6 && currentTime < 11)
+        else if (currentTime >= sequence_2 && currentTime <= sequence_3)
         {
             sequenceStep = 2; //남자 죽음 / 돌 충돌후 다른대로감
         }
-        else if (currentTime > 9)
+        else if (currentTime >= sequence_3)
         {
-            sequenceStep = 0; // 리셋
-            currentTime = 0;
+            currentTime = 0; // 리셋
         }
     }
 }
