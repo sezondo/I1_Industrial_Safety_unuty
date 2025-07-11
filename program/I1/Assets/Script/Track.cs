@@ -12,15 +12,10 @@ public class Track : MonoBehaviour
                                     = new Dictionary<string, GameObject>();
  
     public List<AudioClip> list2 = new List<AudioClip>();
-    private Dictionary<string, AudioClip> dict2
-                            = new Dictionary<string, AudioClip>();      
-
-
-    public List<AudioClip> list3 = new List<AudioClip>();
-    private Dictionary<string, AudioClip> dict3
-                            = new Dictionary<string, AudioClip>();
-
-
+    Dictionary<string, AudioClip> dict2
+                            = new Dictionary<string, AudioClip>();                        
+ 
+ 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -28,14 +23,10 @@ public class Track : MonoBehaviour
         {
             dict1.Add(o.name, o);
         }
-
+ 
         foreach (AudioClip o in list2)
         {
             dict2.Add(o.name, o);
-        }
-        foreach (AudioClip o in list2)
-        {
-            dict3.Add(o.name, o);
         }
  
     }

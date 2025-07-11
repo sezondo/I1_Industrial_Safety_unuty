@@ -9,7 +9,7 @@ public class SimpleTypewriter : MonoBehaviour
     public Text infoText;
     [TextArea] public string infoFullText; // Inspector에서 편집
     public float typeSpeed = 0.5f;
-    public Button exisButton;
+    //public Button exisButton; //이거 낼 정하기
     private Coroutine typingCoroutine;
 
     public AudioClip TTSSound;
@@ -25,7 +25,7 @@ public class SimpleTypewriter : MonoBehaviour
 
     void Start()
     {
-        exisButton.onClick.AddListener(ClosePopup);
+        //exisButton.onClick.AddListener(ClosePopup);
         TTSSoundSource.PlayOneShot(TTSSound);
     }
 
