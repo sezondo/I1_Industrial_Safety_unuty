@@ -3,6 +3,8 @@ using UnityEngine;
 using UnityEngine.XR;
 using UnityEngine.XR.ARFoundation;
 using UnityEngine.XR.ARFoundation.VisualScripting;
+using UnityEngine.XR.ARSubsystems;
+
  
 public class Track : MonoBehaviour
 {
@@ -65,9 +67,15 @@ public class Track : MonoBehaviour
             UpdateImage(t);
         }
  
-        foreach (var removedImage in eventArgs.removed)
+        foreach (var removedImageKeyValuePair in eventArgs.removed) // 변수명을 명확하게 변경했습니다.
         {
-            // Handle removed event
+            // KeyValuePair의 Value 속성에서 ARTrackedImage에 접근합니다.
+            ARTrackedImage removedImage = removedImageKeyValuePair.Value; 
+            string name = removedImage.referenceImage.name;
+            if (dict1.ContainsKey(name))
+            {
+                dict1[name].SetActive(false);
+            }
         }
     }
  

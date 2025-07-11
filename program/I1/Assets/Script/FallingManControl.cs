@@ -1,4 +1,6 @@
 using UnityEngine;
+using DG.Tweening;
+
 
 
 public class FallingManControl : MonoBehaviour
@@ -7,11 +9,13 @@ public class FallingManControl : MonoBehaviour
 
     private Vector3 startTransform;
     private int SQsave;
+    public Vector3 tagetPos;
     // SQ 제어로 만들꺼임
     void Awake()
     {
         animator = GetComponent<Animator>();
         startTransform = transform.position;
+        
     }
 
     // Update is called once per frame
@@ -20,7 +24,7 @@ public class FallingManControl : MonoBehaviour
         switch (SQControl.instance.sequenceStep)
         {
             case 0:
-                transform.Translate(-transform.right * 0.025f * Time.deltaTime);
+                //transform.Translate(-transform.right * 0.025f * Time.deltaTime);
                 break;
 
             case 1:
@@ -48,6 +52,7 @@ public class FallingManControl : MonoBehaviour
         {
             case 0:
                 transform.position = startTransform;
+                transform.DOMove(tagetPos, SQControl.instance.sequence_1);
                 animator.SetTrigger("Run");
                 break;
 
