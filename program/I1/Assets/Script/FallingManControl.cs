@@ -9,13 +9,15 @@ public class FallingManControl : MonoBehaviour
 
     private Vector3 startTransform;
     private int SQsave;
-    public Vector3 tagetPos;
+    private Vector3 tagetPos;
+    public GameObject gameObjects;
     // SQ 제어로 만들꺼임
     void Awake()
     {
         animator = GetComponent<Animator>();
         startTransform = transform.position;
-        
+        tagetPos = gameObjects.transform.position;
+        //SQsave = 1;
     }
 
     // Update is called once per frame
@@ -24,7 +26,13 @@ public class FallingManControl : MonoBehaviour
         switch (SQControl.instance.sequenceStep)
         {
             case 0:
+                Vector3 flatForward = new Vector3(-transform.right.x, 0, -transform.right.z).normalized;
+                transform.Translate(flatForward * 0.025f * Time.deltaTime);
+
+
                 //transform.Translate(-transform.right * 0.025f * Time.deltaTime);
+                //transform.Translate(transform.right * 0.025f * Time.deltaTime);
+
                 break;
 
             case 1:
@@ -52,7 +60,7 @@ public class FallingManControl : MonoBehaviour
         {
             case 0:
                 transform.position = startTransform;
-                transform.DOMove(tagetPos, SQControl.instance.sequence_1);
+                //transform.DOMove(tagetPos, SQControl.instance.sequence_1);
                 animator.SetTrigger("Run");
                 break;
 

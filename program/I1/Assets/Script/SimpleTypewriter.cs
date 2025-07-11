@@ -16,17 +16,18 @@ public class SimpleTypewriter : MonoBehaviour
     public AudioSource TTSSoundSource;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void OnEnable()
+    public void StartTyping()
     {
         infoText.text = "";  // 패널이 켜질 때 텍스트 비우고
         if (typingCoroutine != null) StopCoroutine(typingCoroutine);
         typingCoroutine = StartCoroutine(TypeText());
+        TTSSoundSource.PlayOneShot(TTSSound);
     }
 
     void Start()
     {
         //exisButton.onClick.AddListener(ClosePopup);
-        TTSSoundSource.PlayOneShot(TTSSound);
+        
     }
 
     // Update is called once per frame

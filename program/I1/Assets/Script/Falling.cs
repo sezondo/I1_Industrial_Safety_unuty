@@ -16,7 +16,7 @@ public class Falling : MonoBehaviour
     {
         man = GameObject.Find("FallingMan");
         startTransform = transform.position;
-        newPoint = startTransform / 2;
+        newPoint = startTransform;
     }
 
     // Update is called once per frame
@@ -52,7 +52,7 @@ public class Falling : MonoBehaviour
         switch (SQControl.instance.sequenceStep)
         {
             case 0:
-                transform.position = startTransform;
+                //transform.position = startTransform;
                 
                 break;
 
@@ -63,7 +63,7 @@ public class Falling : MonoBehaviour
                 break;
 
             case 2:
-                transform.DOMove(newPoint, SQControl.instance.sequence_2 - SQControl.instance.sequence_1).SetEase(Ease.OutQuad);
+                transform.DOMove(startTransform, SQControl.instance.sequence_2 - SQControl.instance.sequence_1).SetEase(Ease.OutQuad);
 
                 break;
 
